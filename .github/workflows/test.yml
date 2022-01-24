@@ -69,11 +69,9 @@ jobs:
       - run: echo ${{matrix.dir}}   
       - uses: actions/checkout@v2
 
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
+      - name: Scan current project
+        uses: anchore/scan-action@v2
+        with:
+          path: "."
        
 
-
-    
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
